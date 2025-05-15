@@ -112,7 +112,7 @@
         </div>
         <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
           <div class="col-lg-6">
-            <form id="contactForm" action="https://formspree.io/f/xrbqrnqn" method="POST">
+            <form id="contactForm">
               <div class="form-floating mb-3">
                 <input class="form-control" id="email" type="email" name="email" placeholder="name@example.com" />
                 <label for="email">Email address</label>
@@ -129,7 +129,12 @@
                   We’ll get back to you shortly
                 </div>
               </div>
-              <div class="d-grid"><button class="btn btn-primary btn-xl" disabled id="submitButton" type="submit">Submit</button></div>
+              <div class="d-none" id="submitErrorMessage">
+                <div class="text-center text-danger mb-3">Error sending message :(</div>
+              </div>
+              <div class="d-grid">
+                <button class="btn btn-primary btn-xl" disabled id="submitButton" type="submit">Submit</button>
+              </div>
             </form>
           </div>
         </div>

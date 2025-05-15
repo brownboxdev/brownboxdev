@@ -62,4 +62,33 @@ window.addEventListener('DOMContentLoaded', event => {
 
   emailInput.addEventListener('input', validateEmail);
 
+  const form = document.getElementById('contactForm');
+  const successMessage = document.getElementById('submitSuccessMessage');
+  const errorMessage = document.getElementById('submitErrorMessage');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch('https://formspree.io/f/xrbqrnqn', {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: data
+      });
+
+      if (res.ok) {
+        successMessage.classList.remove('d-none');
+        successMessage.classList.add('d-block');
+      } else {
+        errorMessage.classList.remove('d-none');
+        errorMessage.classList.add('d-block');
+      }
+    } catch {
+      errorMessage.classList.remove('d-none');
+      errorMessage.classList.add('d-block');
+    }
+  });
+
 });
