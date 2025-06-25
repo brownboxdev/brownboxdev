@@ -22,6 +22,7 @@
           <ul class="navbar-nav ms-auto my-2 my-lg-0">
             <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
             <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#opensource">Open Source</a></li>
             <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           </ul>
         </div>
@@ -31,6 +32,7 @@
       <div class="container px-4 px-lg-5 h-100">
         <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
           <div class="col-lg-8 align-self-end">
+            <img src="assets/img/logo.png" class="d-inline-block align-text-top mb-3" />
             <h1 class="text-white font-weight-bold">Focus on what matters while we handle the tech</h1>
             <hr class="divider" />
           </div>
@@ -91,12 +93,33 @@
         </div>
       </div>
     </section>
-    <section class="page-section bg-dark text-white">
-      <div class="container px-4 px-lg-5 text-center">
-        <a href="https://github.com/brownboxdev" target="_blank" class="d-flex flex-column align-items-center">
-          <img src="assets/img/github-mark-white.svg" class="d-inline-block align-text-top me-1" height="60" />
-          <img src="assets/img/GitHub_Logo_White.png" class="d-inline-block align-text-top me-1" height="60" />
-        </a>
+    <section class="page-section bg-dark text-white" id="opensource">
+      <div class="container px-4 px-lg-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <h3 class="text-white mb-4">Open Source Contributions</h3>
+            <p class="text-white-50 mb-4"><small>We actively maintain several open source tools for the Ruby community. Our most popular project:</small></p>
+            <div class="d-flex align-items-center mb-4">
+              <i class="bi-shield-check fs-2 text-white me-4"></i>
+              <div>
+                <h4 class="text-white mb-1">rabarber</h4>
+                <small class="text-white-50" id="rabarber-stats"></small>
+                <br>
+                <a href="https://rubygems.org/gems/rabarber" target="_blank" class="text-white-50 text-decoration-none"><small>View on RubyGems →</small></a>
+              </div>
+            </div>
+            <p class="text-white-75 mb-4">A role-based authorization library for Ruby on Rails focused on controller-level access control. Features multi-tenancy support, dynamic authorization with conditional logic, and view helpers for role-based content rendering.</p>
+            <div>
+              <a href="https://github.com/brownboxdev/rabarber" target="_blank" class="btn btn-light me-3">
+                <i class="bi-github me-2"></i>View Project
+              </a>
+              <a href="https://github.com/brownboxdev" target="_blank" class="btn btn-outline-light me-3">All Projects</a>
+              <a href="https://github.com/sponsors/brownboxdev" target="_blank" class="btn btn-outline-light">
+                <i class="bi-heart me-2"></i>Sponsor
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <section class="page-section" id="contact">

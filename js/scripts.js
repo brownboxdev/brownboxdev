@@ -91,4 +91,39 @@ window.addEventListener('DOMContentLoaded', event => {
     }
   });
 
+  async function fetchGitHubStats() {
+    const statsElement = document.getElementById('rabarber-stats');
+
+    try {
+      const githubResponse = await fetch('https://api.github.com/repos/brownboxdev/rabarber');
+
+      const gemResponse = await fetch('https://rubygems.org/api/v1/gems/rabarber.json');
+
+      let statsText = '';
+
+      if (githubResponse.ok) {
+        const githubData = await githubResponse.json();
+        if (githubData.stargazers_count) {
+          statsText += `⭐ ${githubData.stargazers_count}`;
+        }
+      }
+
+      if (gemResponse.ok) {
+        const gemData = await gemResponse.json();
+        if (gemData.version) {
+          if (statsText) statsText += ' • ';
+          statsText += `v${gemData.version}`;
+        }
+      }
+
+      if (statsElement && statsText) {
+        statsElement.textContent = statsText;
+      }
+    } catch (error) {
+      console.error('Error fetching stats:', error);
+    }
+  }
+
+  fetchGitHubStats();
+
 });
